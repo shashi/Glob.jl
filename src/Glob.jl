@@ -286,7 +286,7 @@ function GlobMatch(pattern::AbstractString)
     else
         S = Union{S, FilenameMatch{S}}
     end
-    glob = Array(S, length(pat))
+    glob = Array{S}(length(pat))
     extended = false
     for i = 1:length(pat)
         p = pat[i]
